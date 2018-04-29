@@ -1,0 +1,64 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create new account</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="assets/img/icons/quit.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Username </label>
+                            <input ng-model="Username" type="text" required>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Password </label>
+                            <input ng-model="Password" type="password" id="password" required>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Email</label>
+                            <input ng-model="Email" type="email" required>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>FirstName</label>
+                            <input ng-model="FirstName" type="text" id="FirstName">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>MiddleName</label>
+                            <input ng-model="MiddleName" type="text" id="MiddleName">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>LastName</label>
+                            <input ng-model="LastName" type="text" id="LastName">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Suffix</label>
+                            <input ng-model="Suffix" type="text" id="Suffix">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Phone</label>
+                            <input ng-model="Phone" type="tel" id="Phone">
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button class="md-primary md-raised" ng-click="addAccount()">
+                Create
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

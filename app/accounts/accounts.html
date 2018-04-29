@@ -1,0 +1,31 @@
+<md-card ng-controller="AccountsCtrl">
+    <md-card-content>
+        <div layout="row" layout-align="space-between center">
+            <div></div>
+            <h2>All accounts</h2>
+            <div layout="row" layout-align="end center">
+                <md-button class="md-fab md-mini md-primary" ng-click="showAccountDialog($event)" aria-label="Add account">
+                    <md-icon md-svg-src="assets/img/icons/add.svg" style="color: white;"></md-icon>
+                </md-button>
+            </div>
+        </div>
+        <md-list flex class="account-list">
+            <md-list-item class="md-2-line" ng-repeat="account in accounts" acc-index="{{$index}}">
+                <div class="md-list-content">
+                    <div layout="row" layout-align="space-between center">
+                        <div class="md-list-item-text" flex>
+                            <h3>{{ account.AccountID }}</h3>
+                            <h4>{{ account.Username }}</h4>
+                        </div>
+                        <div flex>
+                            <md-button class="md-primary md-small md-raised mt-10" ng-click="updateAccountDialog($event, $index)">update</md-button>
+                            <md-button class="md-warn md-small md-raised mt-10" ng-click="deleteAccount($event, $index)">delete</md-button>
+                        </div>
+                    </div>
+                </div>
+                <md-divider ></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>
+
