@@ -41,9 +41,7 @@ module.exports = function (ngModule) {
             $mdDialog.show(dialogOptions).then(function (updatedAccount) {
                 // iterate through all existing properties 
                 // and update them
-                for (el in updatedAccount) {
-                    $scope.accounts[$index][el] = updatedAccount[el];
-                }
+                mergeArrays($scope.accounts[$index], updatedAccount);
             }, function () {
                 // when dialog is canceled
             });
@@ -134,6 +132,19 @@ module.exports = function (ngModule) {
                 }, function (error) {
                     console.log("one error has occured while creating account");
                 })
+            }
+        }
+        
+        /**
+         * Merge array/object arr2 into arr1, if there are 
+         * no equal keys they will not be added, and just updating 
+         * values to arr1
+         * @param {Array} arr1 array/object of key/value pairs
+         * @param {Array} arr2 array/object of key/value pairs
+         */
+        function mergeArrays(arr1, arr2) {
+            for (el in arr2) {
+                arr1[el] = arr2[el];
             }
         }
 
